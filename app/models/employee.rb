@@ -4,4 +4,5 @@ class Employee < ActiveRecord::Base
   has_many :reviews
   validates_formatting_of :employee_email, using: :email
   validates_formatting_of :employee_phone, using: :us_phone
+  validates_formatting_of :employee_zipcode, using: :us_zip
 end
