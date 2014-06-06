@@ -1,0 +1,49 @@
+<h1>Listing employers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employer name</th>
+      <th>Employer zipcode</th>
+      <th>Employer phone</th>
+      <th>Employer url</th>
+      <th>Employer email</th>
+      <th>User</th>
+      <th>Employer street number</th>
+      <th>Employer street</th>
+      <th>Employer unit number</th>
+      <th>Employer city</th>
+      <th>Employer state</th>
+      <th>Employer office type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employers.each do |employer| %>
+      <tr>
+        <td><%= employer.employer_name %></td>
+        <td><%= employer.employer_zipcode %></td>
+        <td><%= employer.employer_phone %></td>
+        <td><%= employer.employer_url %></td>
+        <td><%= employer.employer_email %></td>
+        <td><%= employer.user %></td>
+        <td><%= employer.employer_street_number %></td>
+        <td><%= employer.employer_street %></td>
+        <td><%= employer.employer_unit_number %></td>
+        <td><%= employer.employer_city %></td>
+        <td><%= employer.employer_state %></td>
+        <td><%= employer.employer_office_type %></td>
+        <td><%= link_to 'Show', employer %></td>
+        <td><%= link_to 'Edit', edit_employer_path(employer) %></td>
+        <td><%= link_to 'Destroy', employer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Employer', new_employer_path %>
