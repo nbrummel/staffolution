@@ -4,4 +4,5 @@ class Reps < ActiveRecord::Base
   validates_formatting_of :rep_email, using: :email
   validates_formatting_of :rep_phone, using: :us_phone
   validates_formatting_of :rep_url, using: :url
+  acts_as_votable 
 end
