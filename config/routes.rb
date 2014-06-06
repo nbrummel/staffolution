@@ -1,4 +1,5 @@
 Staffolution::Application.routes.draw do
+  get "landings/index"
   resources :jobs
 
   resources :employers do
