@@ -1,22 +1,76 @@
-<%= simple_form_for(@employer) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :employer_name %>
-    <%= f.input :employer_zipcode %>
-    <%= f.input :employer_phone %>
-    <%= f.input :employer_url %>
-    <%= f.input :employer_email %>
-    <%= f.association :user %>
-    <%= f.input :employer_street_number %>
-    <%= f.input :employer_street %>
-    <%= f.input :employer_unit_number %>
-    <%= f.input :employer_city %>
-    <%= f.input :employer_state %>
-    <%= f.input :employer_office_type %>
+<%= form_for @employer, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :employer_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :employer_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :employer_zipcode, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :employer_zipcode, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :employer_phone, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :employer_phone, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :employer_url, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :employer_url, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :employer_email, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.email_field :employer_email, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :employer_street_number, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :employer_street_number, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :employer_street, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :employer_street, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :employer_unit_number, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :employer_unit_number, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :employer_city, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :employer_city, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :employer_state, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :employer_state, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :employer_office_type, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :employer_office_type, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  employers_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

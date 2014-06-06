@@ -1,49 +1,56 @@
-<h1>Listing employers</h1>
-
-<table>
+<%- model_class = Employer -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Employer %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Employer name</th>
-      <th>Employer zipcode</th>
-      <th>Employer phone</th>
-      <th>Employer url</th>
-      <th>Employer email</th>
-      <th>User</th>
-      <th>Employer street number</th>
-      <th>Employer street</th>
-      <th>Employer unit number</th>
-      <th>Employer city</th>
-      <th>Employer state</th>
-      <th>Employer office type</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:employer_name) %></th>
+      <th><%= model_class.human_attribute_name(:employer_zipcode) %></th>
+      <th><%= model_class.human_attribute_name(:employer_phone) %></th>
+      <th><%= model_class.human_attribute_name(:employer_url) %></th>
+      <th><%= model_class.human_attribute_name(:employer_email) %></th>
+      <th><%= model_class.human_attribute_name(:employer_street_number) %></th>
+      <th><%= model_class.human_attribute_name(:employer_street) %></th>
+      <th><%= model_class.human_attribute_name(:employer_unit_number) %></th>
+      <th><%= model_class.human_attribute_name(:employer_city) %></th>
+      <th><%= model_class.human_attribute_name(:employer_state) %></th>
+      <th><%= model_class.human_attribute_name(:employer_office_type) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @employers.each do |employer| %>
       <tr>
+        <td><%= employer.id %></td>
         <td><%= employer.employer_name %></td>
         <td><%= employer.employer_zipcode %></td>
         <td><%= employer.employer_phone %></td>
         <td><%= employer.employer_url %></td>
         <td><%= employer.employer_email %></td>
-        <td><%= employer.user %></td>
         <td><%= employer.employer_street_number %></td>
         <td><%= employer.employer_street %></td>
         <td><%= employer.employer_unit_number %></td>
         <td><%= employer.employer_city %></td>
         <td><%= employer.employer_state %></td>
         <td><%= employer.employer_office_type %></td>
-        <td><%= link_to 'Show', employer %></td>
-        <td><%= link_to 'Edit', edit_employer_path(employer) %></td>
-        <td><%= link_to 'Destroy', employer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l employer.created_at, format: :long %></td>
+        <td>
+          <%= link_to employer_path(employer), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to employer_path(employer), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Employer', new_employer_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_employer_path,
+            :class => 'btn btn-primary' %>
