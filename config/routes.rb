@@ -1,4 +1,6 @@
 Staffolution::Application.routes.draw do
+  resources :education_classes
+
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords", omniauth_callbacks: "users/omniauth_callbacks"}, skip: [:sessions, :registrations]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

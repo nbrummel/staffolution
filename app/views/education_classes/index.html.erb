@@ -1,0 +1,47 @@
+<h1>Listing education_classes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class name</th>
+      <th>Class type</th>
+      <th>Class keywords</th>
+      <th>Class date start</th>
+      <th>Class date end</th>
+      <th>Class time start</th>
+      <th>Class time end</th>
+      <th>Class worth</th>
+      <th>Reps</th>
+      <th>Class category</th>
+      <th>Class url</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @education_classes.each do |education_class| %>
+      <tr>
+        <td><%= education_class.class_name %></td>
+        <td><%= education_class.class_type %></td>
+        <td><%= education_class.class_keywords %></td>
+        <td><%= education_class.class_date_start %></td>
+        <td><%= education_class.class_date_end %></td>
+        <td><%= education_class.class_time_start %></td>
+        <td><%= education_class.class_time_end %></td>
+        <td><%= education_class.class_worth %></td>
+        <td><%= education_class.reps %></td>
+        <td><%= education_class.class_category %></td>
+        <td><%= education_class.class_url %></td>
+        <td><%= link_to 'Show', education_class %></td>
+        <td><%= link_to 'Edit', edit_education_class_path(education_class) %></td>
+        <td><%= link_to 'Destroy', education_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Education class', new_education_class_path %>
