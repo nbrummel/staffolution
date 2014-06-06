@@ -1,134 +1,72 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Employee -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Employee %></h1>
+</div>
 
-<p>
-  <strong>Employee email:</strong>
-  <%= @employee.employee_email %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_email) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_email %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_phone) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_phone %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_zipcode) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_zipcode %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_first_name) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_first_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_last_name) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_last_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_bages) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_bages %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_description) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_experience_years) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_experience_years %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_experience_months) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_experience_months %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_lic_number) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_lic_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_type) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_type %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_rating) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_rating %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_punctuality) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_punctuality %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_dependability) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_dependability %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_reliable_transportation) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_reliable_transportation %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_accurate_calendar) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_accurate_calendar %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_transportation) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_transportation %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_school) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_school %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_languages) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_languages %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_qualifications) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_qualifications %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_credentials) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_credentials %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_experience) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_experience %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_phone_verified) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_phone_verified %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_email_verified) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_email_verified %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:employee_lic_verified) %></dt>
+      <dd><pre class="prettyprint"><%= @employee.employee_lic_verified %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Employee phone:</strong>
-  <%= @employee.employee_phone %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              employees_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_employee_path(@employee), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              employee_path(@employee),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Employee zipcode:</strong>
-  <%= @employee.employee_zipcode %>
-</p>
-
-<p>
-  <strong>Employee first name:</strong>
-  <%= @employee.employee_first_name %>
-</p>
-
-<p>
-  <strong>Employee last name:</strong>
-  <%= @employee.employee_last_name %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @employee.user %>
-</p>
-
-<p>
-  <strong>Employee bages:</strong>
-  <%= @employee.employee_bages %>
-</p>
-
-<p>
-  <strong>Employee description:</strong>
-  <%= @employee.employee_description %>
-</p>
-
-<p>
-  <strong>Employee experience years:</strong>
-  <%= @employee.employee_experience_years %>
-</p>
-
-<p>
-  <strong>Employee experience months:</strong>
-  <%= @employee.employee_experience_months %>
-</p>
-
-<p>
-  <strong>Employee lic number:</strong>
-  <%= @employee.employee_lic_number %>
-</p>
-
-<p>
-  <strong>Employee type:</strong>
-  <%= @employee.employee_type %>
-</p>
-
-<p>
-  <strong>Employee rating:</strong>
-  <%= @employee.employee_rating %>
-</p>
-
-<p>
-  <strong>Employee punctuality:</strong>
-  <%= @employee.employee_punctuality %>
-</p>
-
-<p>
-  <strong>Employee dependability:</strong>
-  <%= @employee.employee_dependability %>
-</p>
-
-<p>
-  <strong>Employee reliable transportation:</strong>
-  <%= @employee.employee_reliable_transportation %>
-</p>
-
-<p>
-  <strong>Employee accurate calendar:</strong>
-  <%= @employee.employee_accurate_calendar %>
-</p>
-
-<p>
-  <strong>Employee transportation:</strong>
-  <%= @employee.employee_transportation %>
-</p>
-
-<p>
-  <strong>Employee school:</strong>
-  <%= @employee.employee_school %>
-</p>
-
-<p>
-  <strong>Employee languages:</strong>
-  <%= @employee.employee_languages %>
-</p>
-
-<p>
-  <strong>Employee qualifications:</strong>
-  <%= @employee.employee_qualifications %>
-</p>
-
-<p>
-  <strong>Employee credentials:</strong>
-  <%= @employee.employee_credentials %>
-</p>
-
-<p>
-  <strong>Employee experience:</strong>
-  <%= @employee.employee_experience %>
-</p>
-
-<p>
-  <strong>Employee phone verified:</strong>
-  <%= @employee.employee_phone_verified %>
-</p>
-
-<p>
-  <strong>Employee email verified:</strong>
-  <%= @employee.employee_email_verified %>
-</p>
-
-<p>
-  <strong>Employee lic verified:</strong>
-  <%= @employee.employee_lic_verified %>
-</p>
-
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>

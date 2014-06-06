@@ -1,49 +1,49 @@
-<h1>Listing employees</h1>
-
-<table>
+<%- model_class = Employee -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Employee %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Employee email</th>
-      <th>Employee phone</th>
-      <th>Employee zipcode</th>
-      <th>Employee first name</th>
-      <th>Employee last name</th>
-      <th>User</th>
-      <th>Employee bages</th>
-      <th>Employee description</th>
-      <th>Employee experience years</th>
-      <th>Employee experience months</th>
-      <th>Employee lic number</th>
-      <th>Employee type</th>
-      <th>Employee rating</th>
-      <th>Employee punctuality</th>
-      <th>Employee dependability</th>
-      <th>Employee reliable transportation</th>
-      <th>Employee accurate calendar</th>
-      <th>Employee transportation</th>
-      <th>Employee school</th>
-      <th>Employee languages</th>
-      <th>Employee qualifications</th>
-      <th>Employee credentials</th>
-      <th>Employee experience</th>
-      <th>Employee phone verified</th>
-      <th>Employee email verified</th>
-      <th>Employee lic verified</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:employee_email) %></th>
+      <th><%= model_class.human_attribute_name(:employee_phone) %></th>
+      <th><%= model_class.human_attribute_name(:employee_zipcode) %></th>
+      <th><%= model_class.human_attribute_name(:employee_first_name) %></th>
+      <th><%= model_class.human_attribute_name(:employee_last_name) %></th>
+      <th><%= model_class.human_attribute_name(:employee_bages) %></th>
+      <th><%= model_class.human_attribute_name(:employee_description) %></th>
+      <th><%= model_class.human_attribute_name(:employee_experience_years) %></th>
+      <th><%= model_class.human_attribute_name(:employee_experience_months) %></th>
+      <th><%= model_class.human_attribute_name(:employee_lic_number) %></th>
+      <th><%= model_class.human_attribute_name(:employee_type) %></th>
+      <th><%= model_class.human_attribute_name(:employee_rating) %></th>
+      <th><%= model_class.human_attribute_name(:employee_punctuality) %></th>
+      <th><%= model_class.human_attribute_name(:employee_dependability) %></th>
+      <th><%= model_class.human_attribute_name(:employee_reliable_transportation) %></th>
+      <th><%= model_class.human_attribute_name(:employee_accurate_calendar) %></th>
+      <th><%= model_class.human_attribute_name(:employee_transportation) %></th>
+      <th><%= model_class.human_attribute_name(:employee_school) %></th>
+      <th><%= model_class.human_attribute_name(:employee_languages) %></th>
+      <th><%= model_class.human_attribute_name(:employee_qualifications) %></th>
+      <th><%= model_class.human_attribute_name(:employee_credentials) %></th>
+      <th><%= model_class.human_attribute_name(:employee_experience) %></th>
+      <th><%= model_class.human_attribute_name(:employee_phone_verified) %></th>
+      <th><%= model_class.human_attribute_name(:employee_email_verified) %></th>
+      <th><%= model_class.human_attribute_name(:employee_lic_verified) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
+        <td><%= employee.id %></td>
         <td><%= employee.employee_email %></td>
         <td><%= employee.employee_phone %></td>
         <td><%= employee.employee_zipcode %></td>
         <td><%= employee.employee_first_name %></td>
         <td><%= employee.employee_last_name %></td>
-        <td><%= employee.user %></td>
         <td><%= employee.employee_bages %></td>
         <td><%= employee.employee_description %></td>
         <td><%= employee.employee_experience_years %></td>
@@ -64,14 +64,21 @@
         <td><%= employee.employee_phone_verified %></td>
         <td><%= employee.employee_email_verified %></td>
         <td><%= employee.employee_lic_verified %></td>
-        <td><%= link_to 'Show', employee %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l employee.created_at, format: :long %></td>
+        <td>
+          <%= link_to employee_path(employee), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to employee_path(employee), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Employee', new_employee_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_employee_path,
+            :class => 'btn btn-primary' %>
