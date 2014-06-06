@@ -29,6 +29,7 @@ class EmployersController < ApplicationController
   # POST /employers.json
   def create
     @employer = Employer.new(employer_params)
+    @employer.user = current_user
 
     respond_to do |format|
       if @employer.save
