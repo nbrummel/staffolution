@@ -1,4 +1,5 @@
 ActiveAdmin.register Review do
+  permit_params :review_rating, :review_description, :review_employee_recommendation
 
   
   # See permitted parameters documentation:
