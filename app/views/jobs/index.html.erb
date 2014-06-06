@@ -1,31 +1,28 @@
-<h1>Listing jobs</h1>
-
-<table>
+<%- model_class = Job -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Job %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Employee</th>
-      <th>Job position</th>
-      <th>Job description</th>
-      <th>Job start date</th>
-      <th>Job end date</th>
-      <th>Job compensation</th>
-      <th>Job start time</th>
-      <th>Job end time</th>
-      <th>Job filled</th>
-      <th>Job title</th>
-      <th>Employer</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:job_position) %></th>
+      <th><%= model_class.human_attribute_name(:job_description) %></th>
+      <th><%= model_class.human_attribute_name(:job_start_date) %></th>
+      <th><%= model_class.human_attribute_name(:job_end_date) %></th>
+      <th><%= model_class.human_attribute_name(:job_compensation) %></th>
+      <th><%= model_class.human_attribute_name(:job_start_time) %></th>
+      <th><%= model_class.human_attribute_name(:job_end_time) %></th>
+      <th><%= model_class.human_attribute_name(:job_filled) %></th>
+      <th><%= model_class.human_attribute_name(:job_title) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= job.user %></td>
-        <td><%= job.employee %></td>
+        <td><%= job.id %></td>
         <td><%= job.job_position %></td>
         <td><%= job.job_description %></td>
         <td><%= job.job_start_date %></td>
@@ -35,15 +32,21 @@
         <td><%= job.job_end_time %></td>
         <td><%= job.job_filled %></td>
         <td><%= job.job_title %></td>
-        <td><%= job.employer %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l job.created_at, format: :long %></td>
+        <td>
+          <%= link_to job_path(job), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to job_path(job), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Job', new_job_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_job_path,
+            :class => 'btn btn-primary' %>
