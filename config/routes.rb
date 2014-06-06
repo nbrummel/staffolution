@@ -1,5 +1,11 @@
 Staffolution::Application.routes.draw do
-  resources :employees
+  resources :employees do
+  #->Prelang (voting/acts_as_votable)
+  member do
+    get "vote"
+  end
+end
+
 
   resources :education_classes do
   #->Prelang (voting/acts_as_votable)
