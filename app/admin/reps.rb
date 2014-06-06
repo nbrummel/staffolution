@@ -1,4 +1,5 @@
 ActiveAdmin.register Reps do
+  permit_params :rep_name, :rep_type, :rep_description, :rep_email, :rep_phone, :rep_url
 
   
   # See permitted parameters documentation:
