@@ -1,16 +1,28 @@
-<%= simple_form_for(@review) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :employee %>
-    <%= f.input :review_rating %>
-    <%= f.association :user %>
-    <%= f.input :review_description %>
-    <%= f.input :review_employee_recommendation %>
-    <%= f.association :employer %>
+<%= form_for @review, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :review_rating, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :review_rating, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :review_description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :review_description, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :review_employee_recommendation, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :review_employee_recommendation, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  reviews_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
