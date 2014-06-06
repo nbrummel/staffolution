@@ -1,0 +1,30 @@
+= form_for @reps, :html => { :class => 'form-horizontal form-model' } do |f|
+  .form-group
+    = f.label :rep_name, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :rep_name, :class => 'text-field form-control'
+  .form-group
+    = f.label :rep_type, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :rep_type, :class => 'text-field form-control'
+  .form-group
+    = f.label :rep_description, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_area :rep_description, :class => 'text-field form-control'
+  .form-group
+    = f.label :rep_email, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.email_field :rep_email, :class => 'text-field form-control'
+  .form-group
+    = f.label :rep_phone, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :rep_phone, :class => 'text-field form-control'
+  .form-group
+    = f.label :rep_url, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :rep_url, :class => 'text-field form-control'
+  .form-group
+    .col-md-offset-2.col-md-10
+      = f.submit nil, :class => 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+        reps_path, :class => 'btn btn-default'                       |

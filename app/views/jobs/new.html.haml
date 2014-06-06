@@ -1,0 +1,4 @@
+- model_class = Job
+.page-header
+  %h1= t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => Job
+= render :partial => 'form'

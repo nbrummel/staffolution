@@ -1,0 +1,41 @@
+- model_class = Job
+.page-header
+  %h1= t '.title', :default => Job
+%table.table.table-striped
+  %thead
+    %tr
+      %th ID
+      %th= model_class.human_attribute_name(:job_position)
+      %th= model_class.human_attribute_name(:job_description)
+      %th= model_class.human_attribute_name(:job_start_date)
+      %th= model_class.human_attribute_name(:job_end_date)
+      %th= model_class.human_attribute_name(:job_compensation)
+      %th= model_class.human_attribute_name(:job_start_time)
+      %th= model_class.human_attribute_name(:job_end_time)
+      %th= model_class.human_attribute_name(:job_filled)
+      %th= model_class.human_attribute_name(:job_title)
+      %th= model_class.human_attribute_name(:created_at)
+      %th= t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @jobs.each do |job|
+      %tr
+        %td= job.id
+        %td= job.job_position
+        %td= job.job_description
+        %td= job.job_start_date
+        %td= job.job_end_date
+        %td= job.job_compensation
+        %td= job.job_start_time
+        %td= job.job_end_time
+        %td= job.job_filled
+        %td= job.job_title
+        %td= l job.created_at, format: :long
+        %td
+          = link_to job_path(job), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do
+            = glyph 'info-sign'
+            = glyph 'pencil'
+          = link_to job_path(job), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do
+            = glyph 'remove'
+= link_to t('.new', :default => t("helpers.links.new")), |
+  new_job_path,                                          |
+  :class => 'btn btn-primary'                            |

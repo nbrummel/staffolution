@@ -1,0 +1,106 @@
+= form_for @employee, :html => { :class => 'form-horizontal form-model' } do |f|
+  .form-group
+    = f.label :employee_email, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.email_field :employee_email, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_phone, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employee_phone, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_zipcode, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employee_zipcode, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_first_name, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employee_first_name, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_last_name, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employee_last_name, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_bages, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employee_bages, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_description, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_area :employee_description, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_experience_years, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.number_field :employee_experience_years, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_experience_months, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.number_field :employee_experience_months, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_lic_number, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employee_lic_number, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_type, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employee_type, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_rating, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employee_rating, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_punctuality, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.check_box :employee_punctuality, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_dependability, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.check_box :employee_dependability, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_reliable_transportation, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.check_box :employee_reliable_transportation, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_accurate_calendar, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.check_box :employee_accurate_calendar, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_transportation, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.check_box :employee_transportation, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_school, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employee_school, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_languages, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employee_languages, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_qualifications, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employee_qualifications, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_credentials, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employee_credentials, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_experience, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employee_experience, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_phone_verified, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.check_box :employee_phone_verified, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_email_verified, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.check_box :employee_email_verified, :class => 'text-field form-control'
+  .form-group
+    = f.label :employee_lic_verified, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.check_box :employee_lic_verified, :class => 'text-field form-control'
+  .form-group
+    .col-md-offset-2.col-md-10
+      = f.submit nil, :class => 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+        employees_path, :class => 'btn btn-default'                  |

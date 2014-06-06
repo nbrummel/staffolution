@@ -1,0 +1,50 @@
+- model_class = Employer
+.page-header
+  %h1= t '.title', :default => Employer
+.fieldset
+  %dl
+    %dt.label.label-default= model_class.human_attribute_name(:employer_name)
+    %dd
+      %pre.prettyprint= @employer.employer_name
+    %dt.label.label-default= model_class.human_attribute_name(:employer_zipcode)
+    %dd
+      %pre.prettyprint= @employer.employer_zipcode
+    %dt.label.label-default= model_class.human_attribute_name(:employer_phone)
+    %dd
+      %pre.prettyprint= @employer.employer_phone
+    %dt.label.label-default= model_class.human_attribute_name(:employer_url)
+    %dd
+      %pre.prettyprint= @employer.employer_url
+    %dt.label.label-default= model_class.human_attribute_name(:employer_email)
+    %dd
+      %pre.prettyprint= @employer.employer_email
+    %dt.label.label-default= model_class.human_attribute_name(:employer_street_number)
+    %dd
+      %pre.prettyprint= @employer.employer_street_number
+    %dt.label.label-default= model_class.human_attribute_name(:employer_street)
+    %dd
+      %pre.prettyprint= @employer.employer_street
+    %dt.label.label-default= model_class.human_attribute_name(:employer_unit_number)
+    %dd
+      %pre.prettyprint= @employer.employer_unit_number
+    %dt.label.label-default= model_class.human_attribute_name(:employer_city)
+    %dd
+      %pre.prettyprint= @employer.employer_city
+    %dt.label.label-default= model_class.human_attribute_name(:employer_state)
+    %dd
+      %pre.prettyprint= @employer.employer_state
+    %dt.label.label-default= model_class.human_attribute_name(:employer_office_type)
+    %dd
+      %pre.prettyprint= @employer.employer_office_type
+.form-group
+  = link_to t('.back', :default => t("helpers.links.back")), |
+    employers_path, :class => 'btn btn-default'              |
+  -#
+  = link_to t('.edit', :default => t("helpers.links.edit")),   |
+    edit_employer_path(@employer), :class => 'btn btn-default' |
+  -#
+  = link_to t('.destroy', :default => t("helpers.links.destroy")),                                               |
+    employer_path(@employer),                                                                                    |
+    :method => 'delete',                                                                                         |
+    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, |
+    :class => 'btn btn-danger'                                                                                   |

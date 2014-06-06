@@ -1,0 +1,50 @@
+= form_for @employer, :html => { :class => 'form-horizontal form-model' } do |f|
+  .form-group
+    = f.label :employer_name, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employer_name, :class => 'text-field form-control'
+  .form-group
+    = f.label :employer_zipcode, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employer_zipcode, :class => 'text-field form-control'
+  .form-group
+    = f.label :employer_phone, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employer_phone, :class => 'text-field form-control'
+  .form-group
+    = f.label :employer_url, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employer_url, :class => 'text-field form-control'
+  .form-group
+    = f.label :employer_email, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.email_field :employer_email, :class => 'text-field form-control'
+  .form-group
+    = f.label :employer_street_number, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employer_street_number, :class => 'text-field form-control'
+  .form-group
+    = f.label :employer_street, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employer_street, :class => 'text-field form-control'
+  .form-group
+    = f.label :employer_unit_number, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employer_unit_number, :class => 'text-field form-control'
+  .form-group
+    = f.label :employer_city, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employer_city, :class => 'text-field form-control'
+  .form-group
+    = f.label :employer_state, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :employer_state, :class => 'text-field form-control'
+  .form-group
+    = f.label :employer_office_type, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_area :employer_office_type, :class => 'text-field form-control'
+  .form-group
+    .col-md-offset-2.col-md-10
+      = f.submit nil, :class => 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+        employers_path, :class => 'btn btn-default'                  |

@@ -1,0 +1,46 @@
+= form_for @education_class, :html => { :class => 'form-horizontal form-model' } do |f|
+  .form-group
+    = f.label :class_name, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :class_name, :class => 'text-field form-control'
+  .form-group
+    = f.label :class_type, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :class_type, :class => 'text-field form-control'
+  .form-group
+    = f.label :class_keywords, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_area :class_keywords, :class => 'text-field form-control'
+  .form-group
+    = f.label :class_date_start, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.date_select :class_date_start, :class => 'text-field form-control'
+  .form-group
+    = f.label :class_date_end, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.date_select :class_date_end, :class => 'text-field form-control'
+  .form-group
+    = f.label :class_time_start, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.time_select :class_time_start, :class => 'text-field form-control'
+  .form-group
+    = f.label :class_time_end, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.time_select :class_time_end, :class => 'text-field form-control'
+  .form-group
+    = f.label :class_worth, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.number_field :class_worth, :class => 'text-field form-control'
+  .form-group
+    = f.label :class_category, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :class_category, :class => 'text-field form-control'
+  .form-group
+    = f.label :class_url, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :class_url, :class => 'text-field form-control'
+  .form-group
+    .col-md-offset-2.col-md-10
+      = f.submit nil, :class => 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+        education_classes_path, :class => 'btn btn-default'          |

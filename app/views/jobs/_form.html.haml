@@ -1,0 +1,42 @@
+= form_for @job, :html => { :class => 'form-horizontal form-model' } do |f|
+  .form-group
+    = f.label :job_position, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :job_position, :class => 'text-field form-control'
+  .form-group
+    = f.label :job_description, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_area :job_description, :class => 'text-field form-control'
+  .form-group
+    = f.label :job_start_date, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.date_select :job_start_date, :class => 'text-field form-control'
+  .form-group
+    = f.label :job_end_date, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.date_select :job_end_date, :class => 'text-field form-control'
+  .form-group
+    = f.label :job_compensation, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :job_compensation, :class => 'text-field form-control'
+  .form-group
+    = f.label :job_start_time, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.time_select :job_start_time, :class => 'text-field form-control'
+  .form-group
+    = f.label :job_end_time, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.time_select :job_end_time, :class => 'text-field form-control'
+  .form-group
+    = f.label :job_filled, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.check_box :job_filled, :class => 'text-field form-control'
+  .form-group
+    = f.label :job_title, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.text_field :job_title, :class => 'text-field form-control'
+  .form-group
+    .col-md-offset-2.col-md-10
+      = f.submit nil, :class => 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+        jobs_path, :class => 'btn btn-default'                       |
