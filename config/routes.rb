@@ -1,4 +1,6 @@
 Staffolution::Application.routes.draw do
+  resources :reps
+
   resources :reviews
 
   resources :employees do

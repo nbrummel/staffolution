@@ -1,0 +1,39 @@
+<h1>Listing reps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rep name</th>
+      <th>Rep type</th>
+      <th>Rep description</th>
+      <th>User</th>
+      <th>Rep email</th>
+      <th>Rep phone</th>
+      <th>Rep url</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reps.each do |rep| %>
+      <tr>
+        <td><%= rep.rep_name %></td>
+        <td><%= rep.rep_type %></td>
+        <td><%= rep.rep_description %></td>
+        <td><%= rep.user %></td>
+        <td><%= rep.rep_email %></td>
+        <td><%= rep.rep_phone %></td>
+        <td><%= rep.rep_url %></td>
+        <td><%= link_to 'Show', rep %></td>
+        <td><%= link_to 'Edit', edit_rep_path(rep) %></td>
+        <td><%= link_to 'Destroy', rep, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rep', new_rep_path %>
