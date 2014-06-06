@@ -1,0 +1,36 @@
+<%= simple_form_for(@employee) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :employee_email %>
+    <%= f.input :employee_phone %>
+    <%= f.input :employee_zipcode %>
+    <%= f.input :employee_first_name %>
+    <%= f.input :employee_last_name %>
+    <%= f.association :user %>
+    <%= f.input :employee_bages %>
+    <%= f.input :employee_description %>
+    <%= f.input :employee_experience_years %>
+    <%= f.input :employee_experience_months %>
+    <%= f.input :employee_lic_number %>
+    <%= f.input :employee_type %>
+    <%= f.input :employee_rating %>
+    <%= f.input :employee_punctuality %>
+    <%= f.input :employee_dependability %>
+    <%= f.input :employee_reliable_transportation %>
+    <%= f.input :employee_accurate_calendar %>
+    <%= f.input :employee_transportation %>
+    <%= f.input :employee_school %>
+    <%= f.input :employee_languages %>
+    <%= f.input :employee_qualifications %>
+    <%= f.input :employee_credentials %>
+    <%= f.input :employee_experience %>
+    <%= f.input :employee_phone_verified %>
+    <%= f.input :employee_email_verified %>
+    <%= f.input :employee_lic_verified %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,77 @@
+<h1>Listing employees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee email</th>
+      <th>Employee phone</th>
+      <th>Employee zipcode</th>
+      <th>Employee first name</th>
+      <th>Employee last name</th>
+      <th>User</th>
+      <th>Employee bages</th>
+      <th>Employee description</th>
+      <th>Employee experience years</th>
+      <th>Employee experience months</th>
+      <th>Employee lic number</th>
+      <th>Employee type</th>
+      <th>Employee rating</th>
+      <th>Employee punctuality</th>
+      <th>Employee dependability</th>
+      <th>Employee reliable transportation</th>
+      <th>Employee accurate calendar</th>
+      <th>Employee transportation</th>
+      <th>Employee school</th>
+      <th>Employee languages</th>
+      <th>Employee qualifications</th>
+      <th>Employee credentials</th>
+      <th>Employee experience</th>
+      <th>Employee phone verified</th>
+      <th>Employee email verified</th>
+      <th>Employee lic verified</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.employee_email %></td>
+        <td><%= employee.employee_phone %></td>
+        <td><%= employee.employee_zipcode %></td>
+        <td><%= employee.employee_first_name %></td>
+        <td><%= employee.employee_last_name %></td>
+        <td><%= employee.user %></td>
+        <td><%= employee.employee_bages %></td>
+        <td><%= employee.employee_description %></td>
+        <td><%= employee.employee_experience_years %></td>
+        <td><%= employee.employee_experience_months %></td>
+        <td><%= employee.employee_lic_number %></td>
+        <td><%= employee.employee_type %></td>
+        <td><%= employee.employee_rating %></td>
+        <td><%= employee.employee_punctuality %></td>
+        <td><%= employee.employee_dependability %></td>
+        <td><%= employee.employee_reliable_transportation %></td>
+        <td><%= employee.employee_accurate_calendar %></td>
+        <td><%= employee.employee_transportation %></td>
+        <td><%= employee.employee_school %></td>
+        <td><%= employee.employee_languages %></td>
+        <td><%= employee.employee_qualifications %></td>
+        <td><%= employee.employee_credentials %></td>
+        <td><%= employee.employee_experience %></td>
+        <td><%= employee.employee_phone_verified %></td>
+        <td><%= employee.employee_email_verified %></td>
+        <td><%= employee.employee_lic_verified %></td>
+        <td><%= link_to 'Show', employee %></td>
+        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Employee', new_employee_path %>
