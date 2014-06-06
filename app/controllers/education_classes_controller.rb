@@ -1,5 +1,5 @@
 class EducationClassesController < ApplicationController
-  before_action :set_education_class, only: [:show, :edit, :update, :destroy]
+  before_action :set_education_class, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /education_classes
   # GET /education_classes.json
