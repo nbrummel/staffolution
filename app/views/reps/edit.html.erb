@@ -1,6 +1,5 @@
-<h1>Editing rep</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @rep %> |
-<%= link_to 'Back', reps_path %>
+<%- model_class = Reps -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Reps %></h1>
+</div>
+<%= render :partial => 'form' %>
