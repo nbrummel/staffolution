@@ -29,6 +29,7 @@ class RepsController < ApplicationController
   # POST /reps.json
   def create
     @rep = Rep.new(rep_params)
+    @reps.user = current_user
 
     respond_to do |format|
       if @rep.save
