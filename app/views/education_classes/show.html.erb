@@ -1,59 +1,42 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = EducationClass -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => EducationClass %></h1>
+</div>
 
-<p>
-  <strong>Class name:</strong>
-  <%= @education_class.class_name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:class_name) %></dt>
+      <dd><pre class="prettyprint"><%= @education_class.class_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:class_type) %></dt>
+      <dd><pre class="prettyprint"><%= @education_class.class_type %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:class_keywords) %></dt>
+      <dd><pre class="prettyprint"><%= @education_class.class_keywords %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:class_date_start) %></dt>
+      <dd><pre class="prettyprint"><%= @education_class.class_date_start %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:class_date_end) %></dt>
+      <dd><pre class="prettyprint"><%= @education_class.class_date_end %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:class_time_start) %></dt>
+      <dd><pre class="prettyprint"><%= @education_class.class_time_start %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:class_time_end) %></dt>
+      <dd><pre class="prettyprint"><%= @education_class.class_time_end %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:class_worth) %></dt>
+      <dd><pre class="prettyprint"><%= @education_class.class_worth %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:class_category) %></dt>
+      <dd><pre class="prettyprint"><%= @education_class.class_category %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:class_url) %></dt>
+      <dd><pre class="prettyprint"><%= @education_class.class_url %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Class type:</strong>
-  <%= @education_class.class_type %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              education_classes_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_education_class_path(@education_class), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              education_class_path(@education_class),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Class keywords:</strong>
-  <%= @education_class.class_keywords %>
-</p>
-
-<p>
-  <strong>Class date start:</strong>
-  <%= @education_class.class_date_start %>
-</p>
-
-<p>
-  <strong>Class date end:</strong>
-  <%= @education_class.class_date_end %>
-</p>
-
-<p>
-  <strong>Class time start:</strong>
-  <%= @education_class.class_time_start %>
-</p>
-
-<p>
-  <strong>Class time end:</strong>
-  <%= @education_class.class_time_end %>
-</p>
-
-<p>
-  <strong>Class worth:</strong>
-  <%= @education_class.class_worth %>
-</p>
-
-<p>
-  <strong>Reps:</strong>
-  <%= @education_class.reps %>
-</p>
-
-<p>
-  <strong>Class category:</strong>
-  <%= @education_class.class_category %>
-</p>
-
-<p>
-  <strong>Class url:</strong>
-  <%= @education_class.class_url %>
-</p>
-
-<%= link_to 'Edit', edit_education_class_path(@education_class) %> |
-<%= link_to 'Back', education_classes_path %>
