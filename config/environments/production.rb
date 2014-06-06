@@ -77,4 +77,9 @@ Staffolution::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  #->Prelang
+  GA.tracker = "UA-51704460-1"
+
 end
+
