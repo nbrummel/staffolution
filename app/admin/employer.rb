@@ -1,4 +1,5 @@
 ActiveAdmin.register Employer do
+  permit_params :employer_name, :employer_zipcode, :employer_phone, :employer_url, :employer_email, :employer_street_number, :employer_street, :employer_unit_number, :employer_city, :employer_state, :employer_office_type
 
   
   # See permitted parameters documentation:
