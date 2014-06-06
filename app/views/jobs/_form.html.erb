@@ -1,0 +1,22 @@
+<%= simple_form_for(@job) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.association :employee %>
+    <%= f.input :job_position %>
+    <%= f.input :job_description %>
+    <%= f.input :job_start_date %>
+    <%= f.input :job_end_date %>
+    <%= f.input :job_compensation %>
+    <%= f.input :job_start_time %>
+    <%= f.input :job_end_time %>
+    <%= f.input :job_filled %>
+    <%= f.input :job_title %>
+    <%= f.association :employer %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

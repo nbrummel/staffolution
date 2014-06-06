@@ -1,0 +1,49 @@
+<h1>Listing jobs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Employee</th>
+      <th>Job position</th>
+      <th>Job description</th>
+      <th>Job start date</th>
+      <th>Job end date</th>
+      <th>Job compensation</th>
+      <th>Job start time</th>
+      <th>Job end time</th>
+      <th>Job filled</th>
+      <th>Job title</th>
+      <th>Employer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.user %></td>
+        <td><%= job.employee %></td>
+        <td><%= job.job_position %></td>
+        <td><%= job.job_description %></td>
+        <td><%= job.job_start_date %></td>
+        <td><%= job.job_end_date %></td>
+        <td><%= job.job_compensation %></td>
+        <td><%= job.job_start_time %></td>
+        <td><%= job.job_end_time %></td>
+        <td><%= job.job_filled %></td>
+        <td><%= job.job_title %></td>
+        <td><%= job.employer %></td>
+        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Job', new_job_path %>
